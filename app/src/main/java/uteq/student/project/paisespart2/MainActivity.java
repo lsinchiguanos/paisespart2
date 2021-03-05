@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,8 +17,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import uteq.student.project.paisespart2.adaptador.ListAdapter;
-import uteq.student.project.paisespart2.entidad.Pais2;
+import uteq.student.project.paisespart2.entidad.Pais;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void init() {
         String url = "http://www.geognos.com/api/en/countries/info/all.json";
         RequestQueue rque = Volley.newRequestQueue(this);
-        List<Pais2> paisList = new ArrayList<>();
+        List<Pais> paisList = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
@@ -60,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
                             /* CODECOUNTRY */
                             JSONObject jsonObjectCountryCodes = informacion.getJSONObject("CountryCodes");
                             iso = jsonObjectCountryCodes.getString("iso2");
-                            paisList.add(new Pais2(nombre_pais, nombre_capital, iso));
+                            paisList.add(new Pais(nombre_pais, nombre_capital, iso));
                         }
-                        ListAdapter listAdapter = new ListAdapter(paisList, MainActivity.this);
-                        RecyclerView recyclerView = findViewById(R.id.list_item);
-                        recyclerView.setAdapter(listAdapter);
+                        //ListAdapter listAdapter = new ListAdapter(paisList, MainActivity.this);
+                        //RecyclerView recyclerView = findViewById(R.id.list_item);
+                        //recyclerView.setAdapter(listAdapter);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
