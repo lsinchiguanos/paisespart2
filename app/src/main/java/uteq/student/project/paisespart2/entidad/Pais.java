@@ -20,6 +20,12 @@ public class Pais {
     private String fips;
     private int ison;
     private String countryinfo;
+    private String paisCustom;
+
+    public Pais(String name, String iso2) {
+        this.name = name;
+        this.iso2 = iso2;
+    }
 
     public Pais(String name, String name_capital, String iso2) {
         this.name = name;
@@ -200,4 +206,11 @@ public class Pais {
     public void setCountryinfo(String countryinfo) {
         this.countryinfo = countryinfo;
     }
+
+    @Override
+    public String toString() {
+        this.paisCustom = this.name;
+        return paisCustom;
+    }
+
 }
