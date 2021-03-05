@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,19 +26,18 @@ import uteq.student.project.paisespart2.entidad.Pais2;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Pais2> paisList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+
     }
 
     public void init() {
         String url = "http://www.geognos.com/api/en/countries/info/all.json";
         RequestQueue rque = Volley.newRequestQueue(this);
-        paisList = new ArrayList<>();
+        List<Pais2> paisList = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
                 url,
@@ -66,10 +66,9 @@ public class MainActivity extends AppCompatActivity {
                             iso = jsonObjectCountryCodes.getString("iso2");
                             paisList.add(new Pais2(nombre_pais, nombre_capital, iso));
                         }
-                        ListAdapter listAdapter = new ListAdapter(paisList, this);
+                        ListAdapter listAdapter = new ListAdapter(paisList, MainActivity.this);
                         RecyclerView recyclerView = findViewById(R.id.list_item);
                         recyclerView.setHasFixedSize(true);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(this));
                         recyclerView.setAdapter(listAdapter);
                     } catch (JSONException e) {
                         e.printStackTrace();

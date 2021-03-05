@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import uteq.student.project.paisespart2.R;
-import uteq.student.project.paisespart2.entidad.Pais;
+
 import uteq.student.project.paisespart2.entidad.Pais2;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
