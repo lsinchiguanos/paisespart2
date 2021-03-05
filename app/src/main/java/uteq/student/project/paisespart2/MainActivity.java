@@ -1,12 +1,10 @@
 package uteq.student.project.paisespart2;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uteq.student.project.paisespart2.adaptador.ListAdapter;
-import uteq.student.project.paisespart2.entidad.Pais;
 import uteq.student.project.paisespart2.entidad.Pais2;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
-
+        //init();
     }
 
     public void init() {
@@ -68,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         ListAdapter listAdapter = new ListAdapter(paisList, MainActivity.this);
                         RecyclerView recyclerView = findViewById(R.id.list_item);
-                        recyclerView.setHasFixedSize(true);
                         recyclerView.setAdapter(listAdapter);
                     } catch (JSONException e) {
                         e.printStackTrace();

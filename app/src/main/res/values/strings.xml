@@ -4,4 +4,6 @@
     <string name="quito">QUITO</string>
     <string name="ecuador">ECUADOR</string>
     <string name="ec">EC</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="back">Back</string>
 </resources>
