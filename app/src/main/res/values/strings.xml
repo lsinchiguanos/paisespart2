@@ -6,4 +6,7 @@
     <string name="ec">EC</string>
     <string name="title_activity_maps">Map</string>
     <string name="back">Back</string>
+    <string name="detectar">Detectar</string>
+    <string name="capturar">CAPTURAR</string>
+    <string name="search">SEARCH</string>
 </resources>
