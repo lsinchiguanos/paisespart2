@@ -14,14 +14,15 @@ import java.util.List;
 
 import uteq.student.project.paisespart2.R;
 import uteq.student.project.paisespart2.entidad.Pais;
+import uteq.student.project.paisespart2.entidad.Pais2;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    private List<Pais> mData;
+    private List<Pais2> mData;
     private LayoutInflater mInflater;
     private Context context;
 
-    public ListAdapter(List<Pais> paisList, Context context) {
+    public ListAdapter(List<Pais2> paisList, Context context) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = paisList;
         this.context = context;
@@ -57,7 +58,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             imageView = itemView.findViewById(R.id.imageView);
         }
 
-        void bindData(final Pais item) {
+        void bindData(final Pais2 item) {
             text_Pais.setText(item.getName());
             text_Capital.setText(item.getName_capital());
             text_Iso.setText(item.getIso2());
